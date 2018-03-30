@@ -20,6 +20,9 @@
 		<!-- Eg. -->
 		<s:textfield key="fName" id="firstName" />
 		<!-- Your data -->
+		<s:textfield key = "lName" id = "lastName"/>
+		<s:textfield key ="email" id = "email"/>
+		<s:textfield key = "pNumber" id = "phoneNumber"/>
 		<s:submit key="submit" onclick="submitInfo()" />
 	</s:form>
 
@@ -51,7 +54,10 @@
 			'type' : 'post',
 			'data' : {
 				//Eg.:
-				'userInfo.firstName' : $('#firstName').val()
+				'userInfo.firstName' : $('#firstName').val(),
+				'userInfo.lastName' : $('#lastName').val(),
+				'userInfo.phoneNumber' : $('#phoneNumber').val(),
+				'userInfo.email' : $('#email').val()
 			// Your data
 			},
 			'dataType' : 'json',

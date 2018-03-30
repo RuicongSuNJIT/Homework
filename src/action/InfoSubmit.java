@@ -24,7 +24,8 @@ import pojo.UserInfo;
  */
 
 @Action(value = "infoSubmit", results = {
-		@Result(name = "success", location = "/Test.jsp") })
+		@Result(name = "success",type = "json", params = { "root",
+		"userInfo" }, location = "/Test.jsp") })
 public class InfoSubmit extends ActionSupport {
 	/**
 	 * 
@@ -34,11 +35,15 @@ public class InfoSubmit extends ActionSupport {
 
 	@Override
 	public String execute() throws Exception {
-
+		System.out.println(userInfo.getFirstName());
+		System.out.println(userInfo.getLastName());
+		System.out.println(userInfo.getEmail());
+		System.out.println(userInfo.getPhoneNumber());
 		return SUCCESS;
 	}
 
 	public UserInfo getUserInfo() {
+		
 		return userInfo;
 	}
 
